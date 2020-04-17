@@ -1,0 +1,132 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.header{
+    background-color: black;
+    height: 100px;
+
+   
+}
+
+.content
+{
+    background-image: url(images/img-bg.jpg); 
+    background-repeat: no-repeat;
+    height: 650px;
+   background-size: cover; /*permet  de couvrir*/
+}
+.header-text{
+    color: white;
+    position: absolute; /*le bloc soriente par rapport au bloc parent*/
+    top: 24px;
+    left: 40%;
+    font-size: 30px;
+    font-weight: bold;
+}
+.center
+{
+    background-color: white;
+    height: 500px;
+    width: 80%;
+    position: absolute;
+    top: 200px;
+    left: 130px;
+    border-radius: 5px;
+}
+#formulaire
+{
+    width: 50%;
+    height: 500px;
+    background-color: yellow; 
+    position: absolute;
+}
+h5
+{
+    font-size: 20px;
+    margin-left: 180px;
+    text-transform: uppercase;
+    position: relative;
+}
+h6
+{
+    font-size: 15px;
+    margin-left: 120px;
+   
+    position: relative;
+    bottom: 20px;
+}
+
+.label
+{
+    font-size: 17px;
+  
+   margin-bottom: 11px;
+    position: relative;
+    bottom: 30px; 
+    text-align: center;
+}
+ .input
+{
+    font-size:18px;
+   
+   margin-bottom: 11px;
+    position: relative;
+    bottom: 30px; 
+    text-align: center;
+ 
+} 
+.bas
+{
+    position: absolute;
+    margin-left: 600px;
+}
+#dernier
+{
+    width: 60px;
+    margin-left: 110px;
+    font-size: 18px;
+   background-color: turquoise; 
+    text-align: center;
+}
+#annule
+{
+
+
+    background-color: cornflowerblue;
+    text-decoration: none;
+    border: 2px;
+    border-radius: 2px;
+    color: black;
+    font-weight: bold;
+} 
+#clik2
+{
+    margin-left: 90px;
+   margin-bottom: -160px;
+   background-color: cornflowerblue;
+}
+#button2
+{
+    background-color: cornflowerblue;
+    font-size: 15px;
+    bottom: 120px;
+    position: absolute;
+    left: 130px;
+}
+
+
+
+
+.button3
+{
+    background-color: cornflowerblue;
+
+}
+#cool{
+    width: 43px;
+    height: 30px;
+    margin-top: 145px;
+    position: absolute;
+    margin-left: 400px;
+}

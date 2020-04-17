@@ -1,0 +1,279 @@
+#container
+{
+    width: 60%;
+    height: 80%;
+    position: absolute;
+    margin: 5% 5% 5% 20%;  
+} 
+#header
+{
+    width: 100%;
+    height: 4%;
+    background-color: gray;
+    position: relative;
+    display: inline-table;
+}
+#acceuil
+{
+    height: 15%;
+    background-color: black;
+    width: 100%;
+   text-align: center;
+    position: relative;
+    display: inline-table;
+    
+}
+h3
+{
+    
+    color: blanchedalmond;
+}
+
+#image
+{
+    background-image: url(Images/img-bg.jpg);
+    width: 100%;
+    height: 98%;
+    position: relative;
+    display: inline-table;
+}
+#zone
+{
+    width: 96%;
+    height: 82%;
+    background-color: white;
+    bottom: 15%;
+    position: relative;
+    left: 2%;
+    margin-top: 1%;
+}
+#entete
+{
+    background-color: cornflowerblue;
+    width: 100%;
+    height: 10%;
+    position: relative;
+    padding-top: 2%;
+}
+#text
+{
+    position: relative;
+    display: inline-table;
+    float: left;
+    text-align: center;
+    color: seashell;
+  
+}
+h4{
+    font-size: 22px;
+    bottom: 26px;
+    position: relative;
+    left: 135px;
+    text-transform: uppercase;
+}
+#ressortir
+{
+    position: relative;
+    display: inline-table;
+    float: left;
+    text-align: center;
+    margin-left: 25%;
+    color: cornsilk;
+    
+}
+#sort
+{
+    background-color: turquoise;
+    border-radius: 2px;
+    border-color: turquoise;
+}
+#clik
+{
+    color: cornsilk;
+    text-decoration: none;
+   
+}
+#deal
+{
+    position: relative;
+    width: 100%;
+    height: 86%;
+}
+#petit
+{
+    position: relative;
+   
+    width: 40%;
+    height: 79%;
+    display: inline-table;
+    float: left;
+    right: 50%;
+    margin-top: 5%;
+    border-radius: 5px;
+}
+#img1
+{
+    position: relative;
+    background-color: cyan;
+    width: 100%;
+    height: 38%;
+}
+#grand
+{
+    position: relative;
+   
+    width: 54%;
+    height: 89%;
+    display: inline-table;
+    float: right;
+    border-radius: 5px;
+    margin-top: -38%;
+    margin-right: 3%;
+}
+
+#part1
+{
+    height: 100%;
+    width: 65%;
+   
+    display: inline-table;
+}
+h5
+{
+    font-size: 18px;
+    bottom: 290px;
+    text-transform: uppercase;
+    position: relative;
+     margin-left: 30px;
+}
+#liste
+{
+    margin-left: 5%;
+    position: relative;
+    bottom: -22px;
+    text-decoration: none;
+    
+}
+#sk
+{
+    color: black;
+    text-decoration: none;
+}
+#img2
+{
+    position: relative;
+    margin-left: 260px;
+}
+#liste1
+{
+    margin-left: 5%;
+    position: relative;
+    bottom: -16px;
+    text-decoration: none;
+    
+}
+#liste2
+{
+    margin-left: 5%;
+    position: relative;
+    bottom: -16px;
+    text-decoration: none;
+    
+}
+#liste3
+{
+    margin-left: 5%;
+    position: relative;
+    bottom: -16px;
+    text-decoration: none;
+    
+}
+#sk1
+{
+    color: black;
+    text-decoration: none;
+}
+#img3
+{
+    position: relative;
+    margin-left: 260px;
+}
+h6
+{
+    font-size: 13px;
+    bottom: 320px;
+    position: relative;
+    margin-left: 30px;
+}
+.label
+{
+    bottom: 340px;
+    position: relative;
+    margin-left: 30px;
+}
+.input
+{
+    bottom: 340px;
+    position: relative;
+    line-height: 18px;
+    margin-left: 30px;
+}
+#dernier
+{
+    position: relative;
+    left: 360px;
+    bottom: 70px;
+    
+    color: black;
+    width: 10%;
+}
+#clik2
+{
+    
+    color: turquoise;
+    width: 17%;
+    left: 420px;
+    bottom: 90px;
+    position: relative;
+    border-radius: 2px;
+}
+#clik3
+{
+    
+    border-radius: 2px;
+    width: 17%;
+    left: 380px;
+    bottom: 85px;
+    position: relative;
+}
+#button2
+{
+    background-color: turquoise;
+    color: white;
+    border-color: turquoise;
+}
+#button3
+{
+    background-color: turquoise;
+    color: white;
+    border-color: turquoise;
+} 
+
+
+#part2
+{
+    height: 100%;
+    width: 35%;
+    background-color: yellow;
+    display: inline-table;
+}
+
+#footer
+{
+    width: 100%;
+    height: 4%;
+    background-color: gray;
+    position: relative;
+    display: inline-table;
+    margin-top: 4px;
+}
