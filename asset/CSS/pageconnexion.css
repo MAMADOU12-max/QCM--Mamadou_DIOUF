@@ -87,6 +87,14 @@ h4
     float: left;
     margin-left: 50px; 
 }
+#input2
+{
+    height: 40px;
+    width: 74%;
+    display: inline-table;
+    float: left;
+    margin-left: 50px; 
+}
 #label0
 {
     position: absolute;

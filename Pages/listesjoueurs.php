@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -31,7 +24,7 @@
                             <div id="zone">
                                 <div id="entete">
                                     <div id="text"> <h4>créer et paramétrer vos quizz</h4></div>
-                                    <div id="ressortir"><a id="clik" href="pageconnexion.php"> deconnexion</a></div>
+                                    <div id="ressortir"><a id="clik" href="../index.php"> deconnexion</a></div>
                                 </div>
         
                                 <div id="deal">
@@ -52,46 +45,80 @@
                                     </div>
                                     <div id="grand">
                                     <?php
-                                        $tab = file_get_contents('../commun.json');
-                                         $objet = json_decode($tab, true);
+                                            $tab = file_get_contents('../commun.json');
+                                            $objet = json_decode($tab, true);
+                                                                                
                                         
-                                      
-                                            echo '<table style="margin-left:100px; border-collapse: collapse;" >' ;
-                                            echo "<tr>";
-                                               echo '<th style="border: 2px solid black;">NOM</th>' ;
-                                                echo '<th style="border: 2px solid black;">PRENOM</th>';
-                                                echo '<th style="border: 2px solid black;">SCORE</th>' ;
-                                            echo"</tr>";    
-                                                echo ' <tr style="border: 2px solid black;">';
-                                                for ($i=0; $i < count($objet) ; $i++) { 
-                                                    if ($objet[$i]['profil']=='joueur') {
-                                                        echo '<td style="border: 2px solid black;">' ;
-                                                        echo $objet[$i]['nom'] ;
-                                                        echo '</td>' ;
-
-                                                        echo '<td style="border: 2px solid black;">' ;
-                                                        echo $objet[$i]['prenom'] ;
-                                                        echo '</td>' ;
-
-                                                        echo '<td style="border: 2px solid black;">' ;
-                                                        
-                                                        echo '</td>' ;
+                                            $l=count($objet);
+                                            $temp=array();
+                                            
+                                            
+                                                                    
+                                            for ($i=0; $i < $l; $i++)
+                                            { 
+                                                for ($j=0; $j <$i ; $j++)
+                                                { 
+                                                    if($objet[$i]['score']>$objet[$j]['score'])
+                                                    {
+                                                        $temp=$objet[$i];
+                                                        $objet[$i]=$objet[$j];
+                                                    $objet[$j]=$temp;
                                                     }
-                                                       
                                                 }
+                                            }
+                                            $_SESSION['meilleur']=$objet;  
+                                            
+                                            //
+                                            if(isset($_SESSION['meilleur']))
+                                            {
+                                                $total=sizeof($_SESSION['meilleur']);
+                                            
+                                                $col=1;
+                                                $lign=15;
+                                                $elePag=($col*$lign);
                                                 
-                                               echo "</tr>";
+                                                $nbrPage=ceil($total/$elePag);
+                                            
+                                                if(isset($_GET['page'])) // Si la variable $_GET['page'] existe...
+                                                {
+                                                    $page_num=$_GET['page'];
+                                            
+                                                }
+                                                else
+                                                {
+                                                    $page_num=1;
+                                                }
+
 
                                             
-                                           echo "</table>";
+                                                    echo'<table style="margin-left:120px; margin-top: -100px; border-collapse: collapse;"><tr>';
+                                                    for($j=($page_num-1)*15;$j<$page_num*15;$j++)
+                                                    {
+                                                        if($j==$total)
+                                                        {
+                                                        break;
+                                                        }
+                                                        echo'<td  style="border: 2px solid black;">'. $_SESSION['meilleur'][$j]['prenom'].'</td>';
+                                                        echo'<td  style="border: 2px solid black;">'. $_SESSION['meilleur'][$j]['nom'].'</td>';
+                                                        echo'<td  style="border: 2px solid black;">'. $_SESSION['meilleur'][$j]['score']."points".'</td>';
+                                                        echo '<br>';
+                                                        {
+                                                            echo'</tr><tr>';
+                                                        }
+                                                    } 
+                                                    echo'</tr></table>';
 
-                                        
-                                          
+                                                    for ($i=1; $i <=$nbrPage ; $i++) 
+                                                    {
+                                                        echo "<div style=\" position: relative; top: 100px; margin-left: 163px;\"><a href='listesjoueurs.php?lien=3&page=".$i."' >Page $i  </a></div>";
 
-                                                    
-                                                   
-                                        
-                                    ?>                                             
+                                                    }
+
+                                            }    
+
+                                            ?>
+                                        </div>
+
                                         </div>
         
                                     </div>

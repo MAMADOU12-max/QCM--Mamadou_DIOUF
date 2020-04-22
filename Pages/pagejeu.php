@@ -96,7 +96,7 @@
                                 <div id="entete">
                                     <div id="text-jeu"><p> Bienvenue sur la plateforme de jeu de quizz <br> jouer
                                  et tester votre niveau de culture generale<p></div>
-                                    <div id="ressortir"><a id="clik" href="pageconnexion.php"> Déconnexion</a></div>
+                                    <div id="ressortir"><a id="clik" href="../index.php"> Déconnexion</a></div>
                                 </div>
                                <div class="partie-jeux">
                                     <span class="jeu">
@@ -114,14 +114,97 @@
                                       </div>  
                                     </span>
                                     <span class="score">
-                              
+
+<?php
+                                    $tab = file_get_contents('../commun.json');
+       $objet = json_decode($tab, true);
+                                        
+  
+     $l=count($objet);
+     $temp=array();
+     
+    
+                            
+     for ($i=0; $i < $l; $i++)
+      { 
+        for ($j=0; $j <$i ; $j++)
+         { 
+            if($objet[$i]['score']>$objet[$j]['score'])
+            {
+                $temp=$objet[$i];
+                $objet[$i]=$objet[$j];
+               $objet[$j]=$temp;
+            }
+        }
+     }
+     $_SESSION['meilleur']=$objet;  
+     
+     //
+     if(isset($_SESSION['meilleur']))
+     {
+         $total=sizeof($_SESSION['meilleur']);
+      
+         $col=1;
+         $lign=15;
+         $elePag=($col*$lign);
+         
+         $nbrPage=ceil($total/$elePag);
+     
+         if(isset($_GET['page'])) // Si la variable $_GET['page'] existe...
+         {
+             $page_num=$_GET['page'];
+    
+         }
+         else
+         {
+              $page_num=1;
+         }
+
+
+     
+             echo'<table style="margin-left:470px; margin-top: -90px; border-collapse: collapse; border-radius: 5px;"><tr>';
+             for($j=($page_num-1)*15;$j<$page_num*15;$j++)
+             {
+                 if($j==$total)
+                 {
+                 break;
+                 }
+                 echo'<td >'. $_SESSION['meilleur'][$j]['prenom'].'</td>';
+                 echo'<td >'. $_SESSION['meilleur'][$j]['nom'].'</td>';
+                 echo'<td >'. $_SESSION['meilleur'][$j]['score']."points".'</td>';
+                echo '<br>';
+                 {
+                     echo'</tr><tr>';
+                 }
+             } 
+             echo'</tr></table>';
+
+             for ($i=1; $i <=$nbrPage ; $i++) 
+             {
+                echo "<div style=\" position: relative; top: 100px; margin-left: 163px;\"><a href='listesjoueurs.php?lien=3&page=".$i."' >Page $i  </a></div>";
+             
+         
+             }
+             
+
+         
+     }    
+
+       
+    
+    ?>
+</div>
+
+
+
+
+                                   
                                     </span>
                                   
 
                                </div>
         
-                               
-                                       
+                            
                                      
                             </div> 
                         </div>

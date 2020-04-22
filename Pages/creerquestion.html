@@ -1,12 +1,26 @@
- <?php
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créez vos questions</title>
+    <link rel="stylesheet" href="../asset/CSS/creerquestion.css">
+    <script  type="text/javascript" ></script>
+</head>
+<body>
+    <p><strong>WELCOME  <strong> **ASK-BOX**</strong></strong></p>
 
-session_start() ;
-// session_destroy() ;
-// header('location:../index.php') ;
-// exit ;
+    <form action="" method="post" id="form-submit">
+        <label for="ask">how many questions do you want save?</label>
+        <input type="number" id="num1">
+        <input type="submit" name ="soumit" value="valid" id="submit">
+    </form>
+    
+         <script src="../asset/JS/jeu/jeu.js"></script>
+        <script src="../asset/JS/jeu/traitement.js"></script>
+</body>
+</html> -->
 
-
-?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +54,7 @@ session_start() ;
                             <div id="zone">
                                 <div id="entete">
                                     <div id="text"> <h4>créer et paramétrer vos quizz</h4></div>
-                                    <div id="ressortir"><a id="clik" href="../index.php"> deconnexion</a></div>
+                                    <div id="ressortir"><a id="clik" href="pageconnexion.php"> deconnexion</a></div>
                                 </div>
         
                                 <div id="deal">
@@ -82,52 +96,3 @@ session_start() ;
             
         </body>
         </html>
-        <?php
-
-        //     include("fonction.php");
-        //     $name= $lastname = $login = $num = $num1 ="";
-        //     $nameError= $lastnameError = $addressError = $numError = $num1Error ="";
-        //     if(isset($_POST['valide']) && verifyinput(is_nom($_POST['name'])) &&  verifyinput(is_nom($_POST['firsnamde'])) && 
-        //     verifyinput(is_numero($_POST['num'])) && /*verifyinput(is_same($_POST['num1'])) &&*/
-        //      verifyinput(is_address($_POST['login'])) )    
-        //     {
-
-        //     }
-        //     elseif(!is_nom($name)){ echo '<div style="position: relative; color: red; padding-left: 216px;
-        //         top: -420px;> you must write a valid firstname </div>';}
-        //    elseif(!is_nom($_POST['lastname'])){ echo '<div style="position: relative; color: red; padding-left: 215px;
-        //            top: -340px;"> you must write a valid lastname </div>';}
-        //    elseif(!is_nom($_POST['address'])){ echo '<div style="position: relative; color: red; padding-left: 215px;
-        //            top: -254px;">I want know your address</div>';}
-        //    elseif(!is_numero($_POST['num'])){ echo '<div style="position: relative; color: red; padding-left: 215px;
-        //                top: -165px;"> give a right phone number</div>';}
-
-        // if(isset($_POST['name']))
-        // {
-        //     //effectuer une action
-        //     $message = array() ;
-        //     $message['name'] = $_POST['name'] ;
-           
-        //     $message['firstname'] = $_POST['firstname'] ;
-        //     $message['login'] = $_POST['login'] ;
-        //     $message['password'] = $_POST['password'] ;
-        //     $message['confirmation'] = $_POST['confirmation'] ;
-        //     $message['date'] = date("d/m/Y à Hh:i") ;
-        
-        //     $message['id'] = date("dmYHis") ;
-         
-        //     $js = file_get_contents('messages.json') ; //permet d aller prendre le fichier et de le retourner la valeur de json
-             
-        //     $js = json_decode($js, true) ;   //true nous permet de le convertir en tableau sinon on aura un objet
-        //                                     //decode transforme le fichier json en php
-        //     $js[] = $message ;        //on ajoute js dans le tableau
-        
-        //     $js = json_encode($js) ;      //on transforme lelement en json
-        
-        //     file_put_contents('messages.json', $js) ; //permet de mettre notre premier message dans le fichier json
-        
-            
-            
-        
-        // }
-         

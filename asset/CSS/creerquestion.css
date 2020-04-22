@@ -1,0 +1,9 @@
+body{
+    background-color: turquoise;
+    height: 70%;
+    width: 80%;
+
+}
+body p{
+  margin-left: 50%;
+}
