@@ -16,18 +16,18 @@ if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {
     
    //  $mdpError= $loginError =""; 
  
-   $tab = file_get_contents('commun.json');
+   $tab = file_get_contents('asset/JSON/commun.json');
    $objet = json_decode($tab, true);
    $moi = $objet ;
       for ($i=0; $i < count($moi) ; $i++) { 
                if( $login == $moi[$i]['login'] &&  $mdp == $moi[$i]['mot de passe']) {              
                if($moi[$i]['profil'] === "joueur"){
-                      header('Location:Pages/pagejeu.php');
+                      header('Location:src/Pages/pagejeu.php');
                    echo 'ici';
                break;
                }
                if($moi[$i]['profil']== "admin"){  
-                   header('Location:Pages/cptcreation.php');
+                   header('Location:src/Pages/cptcreation.php');
 
                    echo'pas cool';
                    break;
@@ -106,7 +106,7 @@ if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {
                                             </div>
                                         </div>
                                         <button id="bouton" name="clik" type="submit">connexion</button>
-                                        <div id="inscrire"><a id="ins" href="Pages/joueurprofil.php">s'inscrire pour jouer?</a></div>
+                                        <div id="inscrire"><a id="ins" href="src/Pages/joueurprofil.php">s'inscrire pour jouer?</a></div>
                                     </form>
                              
                              </div> 

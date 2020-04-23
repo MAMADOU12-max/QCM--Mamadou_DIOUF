@@ -31,7 +31,7 @@
                             <div id="zone">
                                 <div id="entete">
                                     <div id="text"> <h4>créer et paramétrer vos quizz</h4></div>
-                                    <div id="ressortir"><a id="clik" href="pageconnexion.php"> deconnexion</a></div>
+                                    <div id="ressortir"><a id="clik" href="../../index.php"> deconnexion</a></div>
                                 </div>
         
                                 <div id="deal">
@@ -40,11 +40,11 @@
                                             <img src="" alt="">
                                         </div>
                                         <div id="dessous1">
-                                            <div id="liste"><a id="sk" href="">Listes des Questions</a></div>
+                                            <div id="liste"><a id="sk" href="listesquestion.php">Listes des Questions</a></div>
                                             <label id="img2" for=""> <img src="images/icones/ic-liste.png" alt=""> </label>
                                             <div id="liste1"><a id="sk1" href="creeradmin.php">Creer Admin</a></div>
                                             <label id="img2" for=""> <img src="images/icones/ic-ajout.png" alt=""> </label>  
-                                            <div id="liste2"><a id="sk1" href="listejoueur.php">Listes Joueurs</a></div>
+                                            <div id="liste2"><a id="sk1" href="listesjoueurs.php">Listes Joueurs</a></div>
                                             <label id="img2" for=""> <img src="images/icones/ic-liste.png" alt=""> </label>    
                                             <div id="liste3"><a id="sk1" href="">Creer Questions</a></div>
                                             <label id="img2" for=""> <img src="images/icones/ic-ajout.png" alt=""> </label>    

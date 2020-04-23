@@ -21,7 +21,7 @@ session_start() ;
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="cptcreation1.css">
+        <link rel="stylesheet" href="../../asset/CSS/cptcreation1.css">
     </head>
     <body>
         <form action="" method = "post"> 
@@ -40,7 +40,7 @@ session_start() ;
                             <div id="zone">
                                 <div id="entete">
                                     <div id="text"> <h4>créer et paramétrer vos quizz</h4></div>
-                                    <div id="ressortir"><a id="clik" href="../index.php"> deconnexion</a></div>
+                                    <div id="ressortir"><a id="clik" href="../../index.php"> deconnexion</a></div>
                                 </div>
         
                                 <div id="deal">

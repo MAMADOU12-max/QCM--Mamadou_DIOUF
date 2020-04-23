@@ -31,7 +31,7 @@ h3
 
 #image
 {
-    background-image: url(Images/img-bg.jpg);
+    background-image: url(../IMG/Images/img-bg.jpg);
     width: 100%;
     height: 98%;
     position: relative;
@@ -79,19 +79,21 @@ h4{
     text-align: center;
     margin-left: 25%;
     color: cornsilk;
-    
+    background-color: turquoise;
 }
 #sort
 {
     background-color: turquoise;
     border-radius: 2px;
     border-color: turquoise;
+    
 }
 #clik
 {
     color: cornsilk;
-    text-decoration: none;
-   
+text-transform: uppercase;
+text-decoration: none;
+   background-color: turquoise;
 }
 #deal
 {

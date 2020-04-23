@@ -96,7 +96,7 @@
                                 <div id="entete">
                                     <div id="text-jeu"><p> Bienvenue sur la plateforme de jeu de quizz <br> jouer
                                  et tester votre niveau de culture generale<p></div>
-                                    <div id="ressortir"><a id="clik" href="../index.php"> Déconnexion</a></div>
+                                    <div id="ressortir"><a id="clik" href="../../index.php"> Déconnexion</a></div>
                                 </div>
                                <div class="partie-jeux">
                                     <span class="jeu">
@@ -116,7 +116,7 @@
                                     <span class="score">
 
 <?php
-                                    $tab = file_get_contents('../commun.json');
+                                    $tab = file_get_contents('../../asset/JSON/commun.json');
        $objet = json_decode($tab, true);
                                         
   

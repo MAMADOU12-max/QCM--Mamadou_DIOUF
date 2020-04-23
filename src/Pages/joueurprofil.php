@@ -1,9 +1,9 @@
 
 
 <?php
-           include("../src/fonction.php");
+           include("../fonction.php");
              
-           $joueur = file_get_contents('../commun.json') ;
+           $joueur = file_get_contents('../../asset/JSON/commun.json') ;
            $objet = json_decode($joueur , true) ;
               
           
@@ -16,7 +16,7 @@
 
 
 
-                    $dossier = '../asset/img/';
+                    $dossier = '../../asset/IMG/Images/img/';
 $fichier = basename($_FILES['avatar']['name']);
 $taille_maxi = 1000000;
 $taille = filesize($_FILES['avatar']['tmp_name']);
@@ -76,11 +76,12 @@ else
                   
                         'profil' => "joueur" ,
                         'image' =>  $_FILES['avatar'],
+                        'score' => 0 ,
               ]  ;
                 $objet[] = $nouveaujoueur ;
                $objetEncode = json_encode($objet) ;
            
-               file_put_contents('../commun.json' ,$objetEncode) ;
+               file_put_contents('../../asset/JSON/commun.json' ,$objetEncode) ;
 
                     header('location:pagejeu.php');
 
@@ -114,7 +115,7 @@ else
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="joueur_profil.css">
+    <link rel="stylesheet" href="../../asset/CSS/joueur_profil.css">
 <style>
       
      .cercle{

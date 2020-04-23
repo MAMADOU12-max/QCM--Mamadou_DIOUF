@@ -24,7 +24,7 @@
                             <div id="zone">
                                 <div id="entete">
                                     <div id="text"> <h4>créer et paramétrer vos quizz</h4></div>
-                                    <div id="ressortir"><a id="clik" href="../index.php"> deconnexion</a></div>
+                                    <div id="ressortir"><a id="clik" href="../../index.php"> deconnexion</a></div>
                                 </div>
         
                                 <div id="deal">
@@ -45,10 +45,10 @@
                                     </div>
                                     <div id="grand">
                                     <?php
-                                            $tab = file_get_contents('../commun.json');
+                                            $tab = file_get_contents('../../asset/JSON/commun.json');
                                             $objet = json_decode($tab, true);
                                                                                 
-                                        
+                                                        // var_dump($objet);
                                             $l=count($objet);
                                             $temp=array();
                                             
