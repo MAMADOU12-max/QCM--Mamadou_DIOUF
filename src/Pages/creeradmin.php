@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +14,129 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href=" cptcreation1.css"> 
+        <link rel="stylesheet" href="../../asset/CSS/cptcreation1.css"> 
     </head>
     <body>
         <form action="" method = "post"> 
 
             
+
+
+        <?php
+
+
+include("../fonction.php");
+             
+$joueur = file_get_contents('../../asset/JSON/commun.json') ;
+$objet = json_decode($joueur , true) ;
+   
+
+
+if(isset($_POST['creer']) && verifyinput(is_nom($_POST['firstname']))  &&  verifyinput(is_nom($_POST['lastname'])) && 
+verifyinput(is_password($_POST['password'])) && is_login($_POST['login']) )    
+{
+      if ($_POST['password'] ===$_POST['confirmation']) {
+
+
+
+
+//          $dossier = '../../asset/IMG/Images/img/';
+// $fichier = basename($_FILES['avatar']['name']);
+// $taille_maxi = 1000000;
+// $taille = filesize($_FILES['avatar']['tmp_name']);
+// $extensions = array('.png', '.gif', '.jpg', '.jpeg');
+// $extension = strrchr($_FILES['avatar']['name'], '.'); 
+// //Début des vérifications de sécurité...
+// if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
+// {
+// $erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, txt ou doc...';
+// }
+// if($taille>$taille_maxi)
+// {
+// $erreur = 'Le fichier est trop gros...';
+// }
+// if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
+// {
+// //On formate le nom du fichier ici...
+// $fichier = strtr($fichier, 
+// 'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+// 'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+// $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+// if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+// {
+// echo 'Upload effectué avec succès !';
+// }
+// else //Sinon (la fonction renvoie FALSE).
+// {
+// echo 'Echec de l\'upload !';
+// }
+// }
+// else
+// {
+// echo $erreur;
+// }
+
+ $firstname = $_POST['firstname'] ;
+ $lastname =  $_POST['lastname'] ;
+ $password = $_POST['password'] ;
+ $login = $_POST['login'] ;
+
+ 
+//   echo'<img id="cool" src="' . $objet[$i]['image'] .'">' ;
+   $_SESSION['firstname'] = $_POST['firstname'] ;
+   $_SESSION['lastname'] = $_POST['lastname'] ;
+   $_SESSION['login'] = $_POST['login'] ;
+   $_SESSION['password'] = $_POST['password'] ;
+ 
+
+
+
+   $nouveauadmin = 
+   [
+       'nom' => $firstname ,
+        'prenom' => $lastname ,
+        'login' =>  $login ,   
+        'mot de passe' =>  $password ,
+       
+             'profil' => "admin" ,
+            
+          
+   ]  ;
+     $objet[] = $nouveauadmin ;
+    $objetEncode = json_encode($objet) ;
+
+    file_put_contents('../../asset/JSON/commun.json' ,$objetEncode) ;
+
+         header('location:Bienvenue.html');
+
+   }else{ echo '<div >write same password please</div>' ;}
+   
+}
+elseif (isset($_POST['creer']) && (empty($_POST['firstname']) || empty($_POST['lastname']) && 
+empty($_POST['password']) || empty($_POST['login']))) {
+     echo "you must fill all box!" ;
+}
+
+ elseif(isset($_POST['creer']) && !(is_nom($_POST['firstname'])) ) 
+   {     
+    echo '<div"> your firstname is not valable</div>';}
+    elseif(isset($_POST['creer']) && !(is_nom($_POST['lastname'])) ) 
+    {     
+     echo '<div> your lastname is not good</div>';}
+     elseif(isset($_POST['creer']) && !(is_login($_POST['login'])) ) 
+     {     
+      echo '<div>*****BAD mail*****</div>';}
+      elseif(isset($_POST['creer']) && !(is_password($_POST['password'])) ) 
+      {     
+       echo '<div>password must contain great and small letters at least </div>';}
+     
+
+
+
+
+?>
+
+
             </div><div id="container">
                 <div id="header"></div>
         
@@ -68,7 +187,7 @@
                                             </div>
         
                                             <div class="input">
-                                            <input type="text" name="name">
+                                            <input type="text" name="lastname">
                                             </div>
         
                                             <div class="label">
@@ -126,7 +245,5 @@
             
         </body>
         </html>
-
-
 
 
