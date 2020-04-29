@@ -34,27 +34,23 @@
                                         </div>
                                         <div id="dessous1">
                                             <div id="liste"><a id="sk" href="listesquestion.php">Listes des Questions</a></div>
-                                            <label id="img2" for=""> <img src="images/icones/ic-liste.png" alt=""> </label>
+                                            <label id="img2" for=""> <img  src="../../asset/IMG/Images/Icones/ic-liste.png" alt=""> </label>
                                             <div id="liste1"><a id="sk1" href="creeradmin.php">Creer Admin</a></div>
-                                            <label id="img2" for=""> <img src="images/icones/ic-ajout.png" alt=""> </label>  
+                                            <label id="img2" for=""> <img  src="../../asset/IMG/Images/Icones/ic-ajout.png" alt=""> </label>  
                                             <div id="liste2"><a id="sk1" href="listesjoueurs.php">Listes Joueurs</a></div>
-                                            <label id="img2" for=""> <img src="images/icones/ic-liste.png" alt=""> </label>    
+                                            <label id="img2" for=""> <img  src="../../asset/IMG/Images/Icones/ic-liste.png" alt=""> </label>    
                                             <div id="liste3"><a id="sk1" href="creerquestion.php">Creer Questions</a></div>
-                                            <label id="img2" for=""> <img src="images/icones/ic-ajout.png" alt=""> </label>    
+                                            <label id="img2" for=""> <img  src="../../asset/IMG/Images/Icones/ic-ajout.png" alt=""> </label>    
                                         </div>
                                     </div>
                                     <div id="grand">
                                     <?php
                                             $tab = file_get_contents('../../asset/JSON/commun.json');
                                             $objet = json_decode($tab, true);
-                                                                                
-                                                        // var_dump($objet);
-                                            $l=count($objet);
-                                            $temp=array();
-                                            
-                                            
-                                                                    
-                                            for ($i=0; $i < $l; $i++)
+                                          
+                                               $temp=array();
+                                            //permet de ranger le score par ordre croissant                          
+                                            for ($i=0; $i < count($objet); $i++)
                                             { 
                                                 for ($j=0; $j <$i ; $j++)
                                                 { 
@@ -66,12 +62,10 @@
                                                     }
                                                 }
                                             }
-                                            $_SESSION['meilleur']=$objet;  
-                                            
-                                            //
-                                            if(isset($_SESSION['meilleur']))
+                                      
+                                            if(isset($objet))
                                             {
-                                                $total=sizeof($_SESSION['meilleur']);
+                                                $total=sizeof($objet);
                                             
                                                 $col=1;
                                                 $lign=15;
@@ -91,16 +85,16 @@
 
 
                                             
-                                                    echo'<table style="margin-left:120px; margin-top: -100px; border-collapse: collapse;"><tr>';
+                                                    echo'<table style="margin-left:120px; margin-top: -40px; border-collapse: collapse;"><tr>';
                                                     for($j=($page_num-1)*15;$j<$page_num*15;$j++)
                                                     {
-                                                        if($j==$total)
+                                                        if($j==$total )
                                                         {
                                                         break;
                                                         }
-                                                        echo'<td  style="border: 2px solid black;">'. $_SESSION['meilleur'][$j]['prenom'].'</td>';
-                                                        echo'<td  style="border: 2px solid black;">'. $_SESSION['meilleur'][$j]['nom'].'</td>';
-                                                        echo'<td  style="border: 2px solid black;">'. $_SESSION['meilleur'][$j]['score']."points".'</td>';
+                                                        echo'<td  style="border: 2px solid black;">'. $objet[$j]['prenom'].'</td>';
+                                                        echo'<td  style="border: 2px solid black;">'. $objet[$j]['nom'].'</td>';
+                                                        echo'<td  style="border: 2px solid black;">'. $objet[$j]['score']."points".'</td>';
                                                         echo '<br>';
                                                         {
                                                             echo'</tr><tr>';
@@ -114,8 +108,8 @@
 
                                                     }
 
-                                            }    
-
+                                            } 
+                                      
                                             ?>
                                         </div>
 
@@ -134,5 +128,11 @@
                 <div id="footer"></div>
          </form>
             
-        </body>
+        </body> 
         </html>
+        <script>
+        //   var obj = {"question" : "Sammy", "réponse1" : "Shark", "réponse2" : "Ocean"}
+
+        //     var objet = JSON.stringify(obj)
+        </script>
+        <script src="creerquestion.php"></script>

@@ -41,13 +41,13 @@
                                         </div>
                                         <div id="dessous1">
                                             <div id="liste"><a id="sk" href="listesquestion.php">Listes des Questions</a></div>
-                                            <label id="img2" for=""> <img src="images/icones/ic-liste.png" alt=""> </label>
+                                            <label id="img2" for=""> <img  src="../../asset/IMG/Images/Icones/ic-liste.png" alt=""> </label>
                                             <div id="liste1"><a id="sk1" href="creeradmin.php">Creer Admin</a></div>
-                                            <label id="img2" for=""> <img src="images/icones/ic-ajout.png" alt=""> </label>  
+                                            <label id="img2" for=""> <img  src="../../asset/IMG/Images/Icones/ic-ajout.png" alt=""> </label>  
                                             <div id="liste2"><a id="sk1" href="listesjoueurs.php">Listes Joueurs</a></div>
-                                            <label id="img2" for=""> <img src="images/icones/ic-liste.png" alt=""> </label>    
+                                            <label id="img2" for=""> <img  src="../../asset/IMG/Images/Icones/ic-liste.png" alt=""> </label>    
                                             <div id="liste3"><a id="sk1" href="creerquestion.php">Creer Questions</a></div>
-                                            <label id="img2" for=""> <img src="images/icones/ic-ajout.png" alt=""> </label>    
+                                            <label id="img2" for=""> <img  src="../../asset/IMG/Images/Icones/ic-ajout.png" alt=""> </label>    
                                         </div>
                                     </div>
                                     <div id="grand">

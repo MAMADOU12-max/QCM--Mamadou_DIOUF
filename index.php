@@ -3,11 +3,6 @@
 ?>
 <?php 
 
-
-
-
-               
-
 if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {      
     $login = $_POST['login'] ;
     $mdp = $_POST['mdp'] ; 
@@ -23,13 +18,10 @@ if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {
                if( $login == $moi[$i]['login'] &&  $mdp == $moi[$i]['mot de passe']) {              
                if($moi[$i]['profil'] === "joueur"){
                       header('Location:src/Pages/pagejeu.php');
-                   echo 'ici';
                break;
                }
                if($moi[$i]['profil']== "admin"){  
                    header('Location:src/Pages/cptcreation.php');
-
-                   echo'pas cool';
                    break;
                }   
            } 
@@ -39,17 +31,9 @@ if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {
        // break;
        }
    }
-      
- 
- 
-    
-  // }
    elseif(isset($_POST['clik']) && (empty($_POST['login']) || empty($_POST['mdp']))) 
    { echo '<div style="color: red; padding-top: 260px; padding-left: 550px; position: absolute;">
        you must fill all box!</div>';    } 
-       
-
-
 
 ?>
 <!DOCTYPE html>
@@ -116,48 +100,26 @@ if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {
         <div id="footer"></div>
           
 
-</div>                
+</div> 
+    <script src="asset/JS/index.js"></script>               
    <script>
-
-            // recuperration par ID du input nom
-            var input1 = document.getElementById('input1');
-            var login_error = document.getElementById('login_error');
-
-            // recuperration par ID du input prenom
-            var input2 = document.getElementById('input2');
-            var password_error = document.getElementById('password_error')
-
-            // recuperration par ID du input submit (c-a-d le bouton valider)
-            var bouton = document.getElementById('bouton');
-
-            // ecoute du bouton si on a clicke ou pas 
-            bouton.addEventListener('click',fomrValide);
-
-            // ----------------------------------------- Pour nos futures variables
-           
-            // ----------------------------------------- Fin des futures variabbles
-
-           
-
-            // fonctions qui verifie si nos champ son valide ou pas 
-            function fomrValide(e){ 
-              if (input1.value == "" ) {
-                
-                    // nom_erreur.textContent = "saisir nom" ;
-                    e.preventDefault(); 
-                        login_error.innerHTML = "veuillez saisir un login svp";   }
- 
-                if(input2.value == "" ){  e.preventDefault() ;
-                       password_error.innerHTML = "veuillez saisir un mot de passe svp";}
-
-                        var a = file_get_contents('commun.json');
-                        var b = json_decode(a, true);
-               else if(){}
-              }
+        // // validation au niveau dela page de connexion
+        // var numb1 = document.getElementById('input1') ;
+        // var numb2 = document.getElementById('input2') ;
+        // document.getElementById('bouton').addEventListener('click',function(e){  
+        // if ((numb1.value  == "" &&  numb2.value  == "" )) {
+        //     //    alert('you must fill all box')
+        //     e.preventDefault;
+        //     login_error.textContent = "you must fill all box" ;
+        // }else if(numb1.value  == "" &&  numb2.value  != "" ){
+        //             e.preventDefault;
+        //     login_error.textContent = "you must give a login" ;
+        // }else if(numb1.value  != "" &&  numb2.value == "" ){
+        //             e.preventDefault;
+        //     password_error.textContent = "****lake password****" ;
+        // }
         
-   
-
-
+        // })
 </script>     
 </body>
 </html>

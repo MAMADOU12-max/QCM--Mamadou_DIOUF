@@ -40,41 +40,41 @@ verifyinput(is_password($_POST['password'])) && is_login($_POST['login']) )
 
 
 
-//          $dossier = '../../asset/IMG/Images/img/';
-// $fichier = basename($_FILES['avatar']['name']);
-// $taille_maxi = 1000000;
-// $taille = filesize($_FILES['avatar']['tmp_name']);
-// $extensions = array('.png', '.gif', '.jpg', '.jpeg');
-// $extension = strrchr($_FILES['avatar']['name'], '.'); 
-// //Début des vérifications de sécurité...
-// if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
-// {
-// $erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, txt ou doc...';
-// }
-// if($taille>$taille_maxi)
-// {
-// $erreur = 'Le fichier est trop gros...';
-// }
-// if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
-// {
-// //On formate le nom du fichier ici...
-// $fichier = strtr($fichier, 
-// 'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-// 'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-// $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-// if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
-// {
-// echo 'Upload effectué avec succès !';
-// }
-// else //Sinon (la fonction renvoie FALSE).
-// {
-// echo 'Echec de l\'upload !';
-// }
-// }
-// else
-// {
-// echo $erreur;
-// }
+         $dossier = '../../asset/IMG/Images/img/';
+$fichier = basename($_FILES['avatar']['name']);
+$taille_maxi = 1000000;
+$taille = filesize($_FILES['avatar']['tmp_name']);
+$extensions = array('.png', '.gif', '.jpg', '.jpeg');
+$extension = strrchr($_FILES['avatar']['name'], '.'); 
+//Début des vérifications de sécurité...
+if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
+{
+$erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, txt ou doc...';
+}
+if($taille>$taille_maxi)
+{
+$erreur = 'Le fichier est trop gros...';
+}
+if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
+{
+//On formate le nom du fichier ici...
+$fichier = strtr($fichier, 
+'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+$fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+{
+echo 'Upload effectué avec succès !';
+}
+else //Sinon (la fonction renvoie FALSE).
+{
+echo 'Echec de l\'upload !';
+}
+}
+else
+{
+echo $erreur;
+}
 
  $firstname = $_POST['firstname'] ;
  $lastname =  $_POST['lastname'] ;
@@ -160,13 +160,13 @@ empty($_POST['password']) || empty($_POST['login']))) {
                                         </div>
                                         <div id="dessous1">
                                             <div id="liste"><a id="sk" href="listesquestion.php">Listes des Questions</a></div>
-                                            <label id="img2" for=""> <img src="images/icones/ic-liste.png" alt=""> </label>
+                                            <label id="img2" for=""> <img  src="../../asset/IMG/Images/Icones/ic-liste.png" alt=""> </label>
                                             <div id="liste1"><a id="sk1" href="creeradmin.php">Creer Admin</a></div>
-                                            <label id="img2" for=""> <img src="images/icones/ic-ajout.png" alt=""> </label>  
+                                            <label id="img2" for=""> <img  src="../../asset/IMG/Images/Icones/ic-ajout.png" alt=""> </label>  
                                             <div id="liste2"><a id="sk1" href="listesjoueurs.php">Listes Joueurs</a></div>
-                                            <label id="img2" for=""> <img src="images/icones/ic-liste.png" alt=""> </label>    
-                                            <div id="liste3"><a id="sk1" href="">Creer Questions</a></div>
-                                            <label id="img2" for=""> <img src="images/icones/ic-ajout.png" alt=""> </label>    
+                                            <label id="img2" for=""> <img  src="../../asset/IMG/Images/Icones/ic-liste.png" alt=""> </label>    
+                                            <div id="liste3"><a id="sk1" href="creerquestion.php">Creer Questions</a></div>
+                                            <label id="img2" for=""> <img  src="../../asset/IMG/Images/Icones/ic-ajout.png" alt=""> </label>    
                                         </div>
                                     </div>
                                     <div id="grand">
