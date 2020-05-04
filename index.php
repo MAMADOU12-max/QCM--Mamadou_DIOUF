@@ -15,22 +15,27 @@ if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {
    $objet = json_decode($tab, true);
    $moi = $objet ;
       for ($i=0; $i < count($moi) ; $i++) { 
-               if( $login == $moi[$i]['login'] &&  $mdp == $moi[$i]['mot de passe']) {              
-               if($moi[$i]['profil'] === "joueur"){
+               if( $login == $moi[$i]['login'] &&  $mdp == $moi[$i]['mot de passe'] && $moi[$i]['profil'] == "joueur") {              
+                   
                       header('Location:src/Pages/pagejeu.php');
+                    //   echo "joueur" ;
                break;
-               }
-               if($moi[$i]['profil']== "admin"){  
+                    }
+                
+          if( $login == $moi[$i]['login'] &&  $mdp == $moi[$i]['mot de passe'] && $moi[$i]['profil'] == "admin") {  
                    header('Location:src/Pages/cptcreation.php');
-                   break;
-               }   
-           } 
+                        // echo "suis admin" ;
+                  break;
+           }
+                
+           
        }
-       if( $login != $moi[$i]['login'] &&  $mdp != $moi[$i]['mot de passe']){ echo '<div style="color: red; padding-top: 200px; padding-left: 500px; position: absolute;">
-           not corresponding password and login</div>';
-       // break;
-       }
-   }
+//        if( $login != $moi[$i]['login'] &&  $mdp != $moi[$i]['mot de passe']){ /*echo '<div style="color: red; padding-top: 200px; padding-left: 500px; position: absolute;">
+//            not corresponding password and login</div>';*/
+//            echo "bonjour" ;
+//        // break;
+//        }
+    }
    elseif(isset($_POST['clik']) && (empty($_POST['login']) || empty($_POST['mdp']))) 
    { echo '<div style="color: red; padding-top: 260px; padding-left: 550px; position: absolute;">
        you must fill all box!</div>';    } 
@@ -98,11 +103,14 @@ if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {
                 
                 </div>  
         <div id="footer"></div>
-          
+</body>
+</html>
+        
 
-</div> 
-    <script src="asset/JS/index.js"></script>               
-   <script>
+<!-- </div>  -->
+    <!-- <script src="asset/JS/index.js"></script>                -->
+   <!-- <script> -->
+       <?php
         // // validation au niveau dela page de connexion
         // var numb1 = document.getElementById('input1') ;
         // var numb2 = document.getElementById('input2') ;
@@ -120,6 +128,6 @@ if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {
         // }
         
         // })
-</script>     
-</body>
-</html>
+        
+// </script>  
+  

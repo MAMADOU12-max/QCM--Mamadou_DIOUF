@@ -1,1 +1,124 @@
-{"question":"modou du","points":"23","option":"simple","reponse1":"fall","0":{"question":"modou du","points":"23","option":"simple","reponse1":"fall"},"1":{"question":"mod diouf","points":"12","option":"simple","reponse1":"fall"},"2":{"question":"mod diouf","points":"12","option":"simple","reponse1":"fall"},"3":{"question":"mod diouf","points":"12","option":"simple","reponse1":"fall"},"4":{"question":"mod diouf","points":"12","option":"simple","reponse1":"fall"},"5":{"question":"Modou","points":"12","option":"simple","reponse1":"aliou"},"6":{"question":"cheikh","points":"1","option":"simple","reponse1":"amath"},"7":{"question":"choix","points":"1","option":"simple","reponse1":"AVEC"},"8":{"question":"modou","points":"1","option":"multiple","reponse1":"sous"},"9":{"question":"modou","points":"1","option":"multiple","reponse1":"sous"},"10":{"question":"modou","points":"22232","option":"multiple","reponse1":"multi^ple"},"11":{"question":"modou","points":"22232","option":"multiple","reponse1":"multi^ple"},"12":{"question":"modou","points":"12","option":"texte","reponse1":"texte"},"13":{"question":"modou","points":"12","option":"texte","reponse1":"texte"},"14":{"question":"modou","points":"12","option":"texte","reponse1":"texte"},"15":{"question":"modou","points":"12","option":"texte","reponse1":"texte"},"16":{"question":"modou","points":"12","option":"texte","reponse1":"texte"},"17":{"question":"MODOU","points":"3","option":"simple","reponse1":"modou","reponse2":"modou","reponse3":"modou","reponse4":"modou"},"18":{"question":"MODOU","points":"3","option":"simple","reponse1":"modou","reponse2":"modou","reponse3":"modou","reponse4":"modou"},"19":{"question":"MODOU","points":"3","option":"simple","reponse1":"modou","reponse2":"modou","reponse3":"modou","reponse4":"modou"},"20":{"question":"MODOU","points":"3","option":"simple","reponse1":"modou","reponse2":"modou","reponse3":"modou","reponse4":"modou"},"21":{"question":"MODOU","points":"3","option":"simple","reponse1":"modou","reponse2":"modou","reponse3":"modou","reponse4":"modou"},"22":{"question":"MODOU","points":"3","option":"simple","reponse1":"modou","reponse2":"modou","reponse3":"modou","reponse4":"modou"},"23":{"question":"MODOU","points":"3","option":"simple","reponse1":"modou","reponse2":"modou","reponse3":"modou","reponse4":"modou"},"24":[{"question":"MODOU","points":"3","option":"simple","reponse1":"modou","reponse2":"modou","reponse3":"modou","reponse4":"modou"}],"25":[{"question":"MODOU","points":"3","option":"simple","reponse1":"modou","reponse2":"modou","reponse3":"modou","reponse4":"modou"}],"26":[{"question":"ali","points":"12","option":"simple","reponse1":"lissa","reponse2":"lissa","reponse3":"lissa","reponse4":"lissa"}],"27":[{"question":"ali","points":"12","option":"simple","reponse1":"lissa","reponse2":"lissa","reponse3":"lissa","reponse4":"lissa"}],"28":[{"question":"aliou","points":"2","option":"simple","reponse1":["lissa","habib"],"reponse2":["lissa","habib"],"reponse3":["lissa","habib"],"reponse4":["lissa","habib"]}],"29":[{"question":"234","points":"23","option":"simple","reponse1":["imam","aliou"]}],"30":[{"question":"234","points":"23","option":"simple","reponse":["imam","aliou"]}]}
+[
+    {
+        "question": "qui etait Micheal Jackson?",
+        "points": "2",
+        "choix": "simple",
+        "reponse1": "un musicien",
+        "exacte": "1",
+        "reponse2": "un s\u00e9nateur",
+        "reponse3": "un basketteur"
+    },
+    {
+        "question": "Coche les diff\u00e9rents navigateurs?",
+        "points": "2",
+        "choix": "multiple",
+        "reponse1": "Google",
+        "exacte1": "1",
+        "reponse2": "Safari",
+        "exacte2": "2",
+        "reponse3": "facebook",
+        "reponse4": "Instagram"
+    },
+    {
+        "question": "Combien d'oc\u00e9an existe dans le monde?",
+        "points": "4",
+        "choix": "simple",
+        "reponse1": "5",
+        "exacte": "1",
+        "reponse2": "2",
+        "reponse3": "4"
+    },
+    {
+        "question": "qui est le pr\u00e9sident du rwanda?",
+        "points": "2",
+        "choix": "texte",
+        "reponse": "Paul Kagam\u00e9"
+    },
+    {
+        "question": "quelle est la derni\u00e9re lettre de l'alphabet? ",
+        "points": "5",
+        "choix": "simple",
+        "reponse1": "z",
+        "reponse2": "t",
+        "exacte": "2",
+        "reponse3": "i"
+    },
+    {
+        "question": "D'ou vient le corona ?",
+        "points": "3",
+        "choix": "simple",
+        "reponse1": "En chine",
+        "exacte": "1",
+        "reponse2": "Amerique",
+        "reponse3": "France"
+    },
+    {
+        "question": "quelle est la premi\u00e9re \u00e9cole de codage gratuite du S\u00e9negal?",
+        "points": "2",
+        "choix": "simple",
+        "reponse1": "Sonatel Academie ",
+        "exacte": "1",
+        "reponse2": "Ucad",
+        "reponse3": "ESP"
+    },
+    {
+        "question": "qui a invent\u00e9 la marque 'Apple'?",
+        "points": "2",
+        "choix": "simple",
+        "reponse2": "Styve Jobs",
+        "exacte": "2",
+        "reponse3": "lebron James",
+        "reponse4": "Mark zuckerburk"
+    },
+    {
+        "question": "qui etait battling siki ?",
+        "points": "6",
+        "choix": "texte",
+        "reponse": "le premier champion  africain  de boxe en France?"
+    },
+    {
+        "question": "qui est l'homme le plus riche de l'Asie?",
+        "points": "2",
+        "choix": "simple",
+        "reponse1": "Jack Mah",
+        "exacte": "2",
+        "reponse2": "Jackie Chan",
+        "reponse3": "brucee lee"
+    },
+    {
+        "question": "De quelle nationalit\u00e9 etait Nelson Mandela?",
+        "points": "3",
+        "choix": "simple",
+        "reponse1": "Malgache",
+        "reponse2": "Sud Africain",
+        "exacte": "2"
+    },
+    {
+        "question": "premi\u00e9re puissance mondiale?",
+        "points": "2",
+        "choix": "simple",
+        "reponse1": "USA",
+        "exacte": "1",
+        "reponse2": "Allemagne"
+    },
+    {
+        "question": "coche les joueurs?",
+        "points": "2",
+        "choix": "multiple",
+        "reponse1": "alexandro",
+        "exacte1": "1",
+        "reponse2": "Iron",
+        "reponse3": "neymar",
+        "exacte3": "3"
+    },
+    {
+        "question": "Identifiez les grands inventeurs du monde ?",
+        "points": "4",
+        "choix": "multiple",
+        "reponse1": "Thomas Edison",
+        "exacte1": "1",
+        "reponse2": "Einstein",
+        "exacte2": "2",
+        "reponse3": "Mike Tyson"
+    }
+]

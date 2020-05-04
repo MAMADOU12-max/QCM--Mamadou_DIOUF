@@ -1,110 +1,110 @@
 
 
 <?php
-//            include("../fonction.php");
+           include("../fonction.php");
              
-//            $joueur = file_get_contents('../../asset/JSON/commun.json') ;
-//            $objet = json_decode($joueur , true) ;
+           $joueur = file_get_contents('../../asset/JSON/commun.json') ;
+           $objet = json_decode($joueur , true) ;
               
           
            
-//            if(isset($_POST['creer']) && verifyinput(is_nom($_POST['firstname']))  &&  verifyinput(is_nom($_POST['lastname'])) && 
-//            verifyinput(is_password($_POST['password'])) && is_login($_POST['login']) )    
-//            {
-//                  if ($_POST['password'] ===$_POST['confirmation']) {
+           if(isset($_POST['creer']) && verifyinput(is_nom($_POST['firstname']))  &&  verifyinput(is_nom($_POST['lastname'])) && 
+           verifyinput(is_password($_POST['password'])) && is_login($_POST['login']) )    
+           {
+                 if ($_POST['password'] ===$_POST['confirmation']) {
 
 
 
 
-//                     $dossier = '../../asset/IMG/Images/img/';
-// $fichier = basename($_FILES['avatar']['name']);
-// $taille_maxi = 1000000;
-// $taille = filesize($_FILES['avatar']['tmp_name']);
-// $extensions = array('.png', '.gif', '.jpg', '.jpeg');
-// $extension = strrchr($_FILES['avatar']['name'], '.'); 
-// //Début des vérifications de sécurité...
-// if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
-// {
-//      $erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, txt ou doc...';
-// }
-// if($taille>$taille_maxi)
-// {
-//      $erreur = 'Le fichier est trop gros...';
-// }
-// if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
-// {
-//      //On formate le nom du fichier ici...
-//      $fichier = strtr($fichier, 
-//           'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-//           'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-//      $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-//      if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
-//      {
-//           echo 'Upload effectué avec succès !';
-//      }
-//      else //Sinon (la fonction renvoie FALSE).
-//      {
-//           echo 'Echec de l\'upload !';
-//      }
-// }
-// else
-// {
-//      echo $erreur;
-// }
+                    $dossier = '../../asset/IMG/Images/img/';
+$fichier = basename($_FILES['avatar']['name']);
+$taille_maxi = 1000000;
+$taille = filesize($_FILES['avatar']['tmp_name']);
+$extensions = array('.png', '.gif', '.jpg', '.jpeg');
+$extension = strrchr($_FILES['avatar']['name'], '.'); 
+//Début des vérifications de sécurité...
+if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
+{
+     $erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, txt ou doc...';
+}
+if($taille>$taille_maxi)
+{
+     $erreur = 'Le fichier est trop gros...';
+}
+if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
+{
+     //On formate le nom du fichier ici...
+     $fichier = strtr($fichier, 
+          'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+          'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+     $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+     if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+     {
+          echo 'Upload effectué avec succès !';
+     }
+     else //Sinon (la fonction renvoie FALSE).
+     {
+          echo 'Echec de l\'upload !';
+     }
+}
+else
+{
+     echo $erreur;
+}
      
-          //   $firstname = $_POST['firstname'] ;
-          //   $lastname =  $_POST['lastname'] ;
-          //   $password = $_POST['password'] ;
-          //   $login = $_POST['login'] ;
-          //   $avatar = $_FILES['avatar'];
+            $firstname = $_POST['firstname'] ;
+            $lastname =  $_POST['lastname'] ;
+            $password = $_POST['password'] ;
+            $login = $_POST['login'] ;
+            $avatar = $_FILES['avatar'];
             
-          // //   echo'<img id="cool" src="' . $objet[$i]['image'] .'">' ;
-          //     $_SESSION['firstname'] = $_POST['firstname'] ;
-          //     $_SESSION['lastname'] = $_POST['lastname'] ;
-          //     $_SESSION['login'] = $_POST['login'] ;
-          //     $_SESSION['password'] = $_POST['password'] ;
-          //     $_SESSION['avatar'] = $_FILES['avatar'] ;
+          //   echo'<img id="cool" src="' . $objet[$i]['image'] .'">' ;
+              $_SESSION['firstname'] = $_POST['firstname'] ;
+              $_SESSION['lastname'] = $_POST['lastname'] ;
+              $_SESSION['login'] = $_POST['login'] ;
+              $_SESSION['password'] = $_POST['password'] ;
+              $_SESSION['avatar'] = $_FILES['avatar'] ;
 
            
            
-          //     $nouveaujoueur = 
-          //     [
-          //         'nom' => $firstname ,
-          //          'prenom' => $lastname ,
-          //          'login' =>  $login ,   
-          //          'mot de passe' =>  $password ,
-          //          'score' => 0 ,
-          //               'profil' => "joueur" ,
-          //               'image' =>  $_FILES['avatar']
+              $nouveaujoueur = 
+              [
+                  'nom' => $firstname ,
+                   'prenom' => $lastname ,
+                   'login' =>  $login ,   
+                   'mot de passe' =>  $password ,
+                   'score' => 0 ,
+                        'profil' => "joueur" ,
+                        'image' =>  $_FILES['avatar']
                     
-          //     ]  ;
-          //       $objet[] = $nouveaujoueur ;
-          //      $objetEncode = json_encode($objet) ;
+              ]  ;
+                $objet[] = $nouveaujoueur ;
+               $objetEncode = json_encode($objet) ;
            
-          //      file_put_contents('../../asset/JSON/commun.json' ,$objetEncode) ;
+               file_put_contents('../../asset/JSON/commun.json' ,$objetEncode) ;
 
-          //           header('location:pagejeu.php');
+                    header('location:pagejeu.php');
 
-          //     }else{ echo '<div style="color: red; font-size: 14px; position: relative; top: 467px; left: 160px">write same password please</div>' ;}
+              }else{ echo '<div style="color: red; font-size: 14px; position: relative; top: 467px; left: 160px">write same password please</div>' ;}
               
-          //  }
-          //  elseif (isset($_POST['creer']) && (empty($_POST['firstname']) || empty($_POST['lastname']) && 
-          //  empty($_POST['password']) || empty($_POST['login']))) {
-          //       echo "you must fill all box!" ;
-          //  }
+           }
+           elseif (isset($_POST['creer']) && (empty($_POST['firstname']) || empty($_POST['lastname']) && 
+           empty($_POST['password']) || empty($_POST['login']))) {
+                echo "you must fill all box!" ;
+           }
            
-          //   elseif(isset($_POST['creer']) && !(is_nom($_POST['firstname'])) ) 
-          //     {     
-          //      echo '<div style="color: red; font-size: 14px; top: 267px; left: 160px"> your firstname is not valable</div>';}
-          //      elseif(isset($_POST['creer']) && !(is_nom($_POST['lastname'])) ) 
-          //      {     
-          //       echo '<div style="color: red; font-size: 14px; top: 228px; left: 165px"> your lastname is not good</div>';}
-          //       elseif(isset($_POST['creer']) && !(is_login($_POST['login'])) ) 
-          //       {     
-          //        echo '<div style="color: red; font-size: 14px; top: 297px; left: 175px">*****BAD mail*****</div>';}
-          //        elseif(isset($_POST['creer']) && !(is_password($_POST['password'])) ) 
-          //        {     
-          //         echo '<div style="color: red; font-size: 14px; top: 360px; left: 85px">password must contain great and small letters at least </div>';}
+            elseif(isset($_POST['creer']) && !(is_nom($_POST['firstname'])) ) 
+              {     
+               echo '<div style="color: red; font-size: 14px; top: 267px; left: 160px"> your firstname is not valable</div>';}
+               elseif(isset($_POST['creer']) && !(is_nom($_POST['lastname'])) ) 
+               {     
+                echo '<div style="color: red; font-size: 14px; top: 228px; left: 165px"> your lastname is not good</div>';}
+                elseif(isset($_POST['creer']) && !(is_login($_POST['login'])) ) 
+                {     
+                 echo '<div style="color: red; font-size: 14px; top: 297px; left: 175px">*****BAD mail*****</div>';}
+                 elseif(isset($_POST['creer']) && !(is_password($_POST['password'])) ) 
+                 {     
+                  echo '<div style="color: red; font-size: 14px; top: 360px; left: 85px">password must contain great and small letters at least </div>';}
                 
            ?>
 

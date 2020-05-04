@@ -1,55 +1,73 @@
-        <?php                                             
-                $open_json = file_get_contents('../../asset/JSON/question.json') ;
-                $tab = json_decode($open_json , true) ;
+        <?php      
+                // rajout des données dans json
+                if (!empty($_POST)) {
+                  $tab=[] ;
+                  unset($_POST['bouton']) ;
+                  $tab = $_POST;
+                        $data = file_get_contents('../../asset/JSON/question.json') ;
+                $data = json_decode($data, true);
 
-            if (isset($_POST['bouton']) && !empty($_POST['text']) && !empty($_POST['points']) && !empty($_POST['choix']) 
-            && (!empty($_POST['choix_texte']) || !empty($_POST['choix_unik']) || !empty($_POST['choix_multiple'])))
-             {               
-                $session['text'] = $_POST['text'] ;
-                $session['points'] = $_POST['points'] ; 
-                $session['choix'] = $_POST['choix'] ; 
+                $data[]=$tab;
+                $data = json_encode($data) ;
+                // var_dump($data) ;
 
-                    if(($_POST['choix']) == "simple" ){  
-                    $session['choix_unik'] = $_POST['choix_unik'] ;
+                file_put_contents('../../asset/JSON/question.json', $data) ;
+
+                }else{ echo "tout les champs sont obligatoires!" ;}
+
+
+
+            //     $open_json = file_get_contents('../../asset/JSON/question.json') ;
+            //     $tab = json_decode($open_json , true) ;
+
+            // if (isset($_POST['bouton']) && !empty($_POST['text']) && !empty($_POST['points']) && !empty($_POST['choix']) 
+            // && (!empty($_POST['choix_texte']) || !empty($_POST['choix_unik']) || !empty($_POST['choix_multiple'])))
+            //  {               
+            //     $session['text'] = $_POST['text'] ;
+            //     $session['points'] = $_POST['points'] ; 
+            //     $session['choix'] = $_POST['choix'] ; 
+
+            //         if(($_POST['choix']) == "simple" ){  
+            //         $session['choix_unik'] = $_POST['choix_unik'] ;
             
-                        $proposition[] = 
-                        [
-                            "question" => $session['text'] ,
-                            "points" => $session['points'],
-                            "option" => $session['choix'],
-                            "reponse" => $session['choix_unik'] ,  
-                        ];
-                    $tab[] = $proposition ;
-                    $tabEncode = json_encode($tab) ;
-                    file_put_contents('../../asset/JSON/question.json', $tabEncode) ;
-                        }elseif(($_POST['choix']) == "multiple" ){
-                            $session['choix_multiple'] = $_POST['choix_multiple'] ;
-                        $proposition = 
-                        [
-                            "question" => $session['text'] ,
-                            "points" => $session['points'],
-                            "option" => $session['choix'],
-                            "reponse" => $session['choix_multiple']  ,  
-                        ];
-                    $tab[] = $proposition ;
-                    $tabEncode = json_encode($tab) ;
-                    file_put_contents('../../asset/JSON/question.json', $tabEncode) ;
+            //             $proposition[] = 
+            //             [
+            //                 "question" => $session['text'] ,
+            //                 "points" => $session['points'],
+            //                 "option" => $session['choix'],
+            //                 "reponse" => $session['choix_unik'] ,  
+            //             ];
+            //         $tab[] = $proposition ;
+            //         $tabEncode = json_encode($tab) ;
+            //         file_put_contents('../../asset/JSON/question.json', $tabEncode) ;
+            //             }elseif(($_POST['choix']) == "multiple" ){
+            //                 $session['choix_multiple'] = $_POST['choix_multiple'] ;
+            //             $proposition = 
+            //             [
+            //                 "question" => $session['text'] ,
+            //                 "points" => $session['points'],
+            //                 "option" => $session['choix'],
+            //                 "reponse" => $session['choix_multiple']  ,  
+            //             ];
+            //         $tab[] = $proposition ;
+            //         $tabEncode = json_encode($tab) ;
+            //         file_put_contents('../../asset/JSON/question.json', $tabEncode) ;
 
-                        }elseif(($_POST['choix']) == "texte" ){
-                            $session['choix_texte'] = $_POST['choix_texte'] ;
-                        $proposition = 
-                        [
-                            "question" => $session['text'] ,
-                            "points" => $session['points'],
-                            "option" => $session['choix'],
-                            "reponse" => $session['choix_texte']  ,  
-                        ];
-                    $tab[] = $proposition ;
-                    $tabEncode = json_encode($tab) ;
-                    file_put_contents('../../asset/JSON/question.json', $tabEncode) ;
+            //             }elseif(($_POST['choix']) == "texte" ){
+            //                 $session['choix_texte'] = $_POST['choix_texte'] ;
+            //             $proposition = 
+            //             [
+            //                 "question" => $session['text'] ,
+            //                 "points" => $session['points'],
+            //                 "option" => $session['choix'],
+            //                 "reponse" => $session['choix_texte']  ,  
+            //             ];
+            //         $tab[] = $proposition ;
+            //         $tabEncode = json_encode($tab) ;
+            //         file_put_contents('../../asset/JSON/question.json', $tabEncode) ;
                                      
-                        }
-            } 
+            //             }
+            // } 
             
         ?>
    
@@ -58,7 +76,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Creez vos questions</title>
         <link rel="stylesheet" href="../../asset/CSS/depotquizz.css">
       <style>
           .Gn{
@@ -102,8 +120,7 @@
                              <div id="acceuil">
                             <h3>le plaisir de jouer</h3>
                             </div>
-                            
-                
+                                            
                             <div id="zone">
                                 <div id="entete">
                                     <div id="text"> <h4>créer et paramétrer vos quizz</h4></div>
@@ -133,7 +150,7 @@
                                             
                                             <div>   
                                                 <label style="margin-top: 20px; position: absolute; margin-left:5px;" for="">Questions</label>
-                                                <textarea name="text" id="textss" class="area" cols="33" rows="3" style="position: absolute; margin-left: 70px;"></textarea>   
+                                                <textarea name="question" id="question" class="area" cols="33" rows="3" style="position: absolute; margin-left: 70px;"></textarea>   
                                                 <!-- <span class="error-text">****</span> -->
                                             </div>
 
@@ -172,11 +189,11 @@
          <script>
          
         // FONCTION qui permet de generer des inputs
-         var indice = 0 ;
+        //  var indice = 0 ;
         var nbr = 0 ;
          function genere(){
            nbr++ ; 
-           indice++ ;
+        //    indice++ ;
                 // recup de l'id select
                  var choix = document.getElementById("choix").value  ;
                 //divinputs est le div parent
@@ -193,22 +210,22 @@
                          //pour desactiver le bouton    
                         document.getElementById("btn-first").disabled = false;
                                   newinput.innerHTML = `
-                        <input type="text" name="choix_unik[${indice}]" class="new">
-                        <input type="radio" name="exacte[${indice}]" class="radio">
+                        <input type="text" name="reponse${nbr}" class="new">
+                        <input type="radio" value="${nbr}" name="exacte" class="radio">
                         <button type="button" class="new_btn" onclick= "sup(${nbr})">X</button>                      
                    `;   
                     } else if(choix === "multiple"){
                         document.getElementById("btn-first").disabled = false;
-                        newinput.innerHTML = `
-                        <input type="text" name="choix_multiple[${indice}]" class="new">
-                        <input type="checkbox" name="exacte[${indice}]" class="check" >
+                        newinput.innerHTML = ` 
+                        <input type="text" name="reponse${nbr}" class="new">
+                        <input type="checkbox" value="${nbr}" name="exacte${nbr}" class="check" >
                         <button type="button" class="new_btn" onclick= "sup(${nbr})">X</button>
                    `;   
                     } else if(choix === "texte"){
                         //pour activer le bouton
                         document.getElementById("btn-first").disabled = true;
                         newinput.innerHTML = `
-                        <input type="text" name="exacte[${indice}]" name="choix_texte" class="new">
+                        <input type="text" name="reponse"  class="new">
                         <button type="button" class="new_btn" onclick= "sup(${nbr})">X</button>                     
                    `; 
                     }
@@ -222,7 +239,7 @@
                             target.remove() ;
                        }
                 //validation des champs
-                    var text = document.getElementById('text');
+                    var question = document.getElementById('question');
                     var points = document.getElementById('points');
                     var new_input_text = document.getElementById('reponse');
                 document.getElementById('soumet').addEventListener('click',function(e){
@@ -231,7 +248,7 @@
                         e.preventDefault() ;
                         // alert('ok')
                         error.textContent = "**slate a mark**";
-                    }else if(textss.value == "") {
+                    }else if(question.value == "") {
                         e.preventDefault() ;
                         // alert('ok')
                         error.textContent = "**Ask a question**";

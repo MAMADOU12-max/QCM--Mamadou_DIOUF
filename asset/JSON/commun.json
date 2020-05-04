@@ -1,1 +1,49 @@
-[{"nom":"Laye","prenom":"Laye","login":"layediop@gmail.com","mot de passe":"Laye","score": "","profil":"admin"},{"nom":"Modou","prenom":"Modou","login":"modoudiouf535@gmail.com","mot de passe":"DOdu","score":0,"profil":"joueur","image":{"name":"","type":"","tmp_name":"","error":4,"size":0}}]
+[
+    
+    {
+        "nom": "Modou",
+        "prenom": "Modou",
+        "login": "modoudiouf535@gmail.com",
+        "mot de passe": "DOdu",
+        "score": 0,
+        "profil": "joueur",
+        "image": {
+            "name": "",
+            "type": "",
+            "tmp_name": "",
+            "error": 4,
+            "size": 0
+        }
+    },
+    {
+        "nom": "Laye",
+        "prenom": "Laye",
+        "login": "layediop@gmail.com",
+        "mot de passe": "Laye",
+        "score": "",
+        "profil": "admin"
+    },
+    {
+        "nom": "Laye",
+        "prenom": "Laye",
+        "login": "layep@gmail.com",
+        "mot de passe": "Laye",
+        "score": "",
+        "profil": "joueur"
+    },
+    {
+        "nom": "Habib",
+        "prenom": "Habib",
+        "login": "laye@gmail.com",
+        "mot de passe": "Habib",
+        "score": 0,
+        "profil": "joueur",
+        "image": {
+            "name": "Capture.JP1.JPG",
+            "type": "image\/jpeg",
+            "tmp_name": "C:\\Users\\ProBook\\OneDrive\\Nouveau dossier\\tmp\\php3080.tmp",
+            "error": 0,
+            "size": 76588
+        }
+    }
+]

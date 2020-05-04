@@ -279,3 +279,14 @@ h6
     display: inline-table;
     margin-top: 4px;
 }
+#liste_question{
+     position: relative;
+   background-color: turquoise;
+   overflow: auto;  
+    width: 48%;
+    height:310px;
+    float: right;
+    border-radius: 5px;
+    margin-top: -38%; 
+    text-align: center;
+}
