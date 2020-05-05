@@ -114,95 +114,7 @@
                                 </div>
                                <div class="partie-jeux">
                                     <span class="jeu" style="overflow: auto;">
-                                    <table>
-                                                <?php
-                                               
-                                                $tab = file_get_contents('../../asset/JSON/question.json');
-                                                $objet = json_decode($tab, true);
-                                               
-                                                if (isset($_POST['suivant'] ) && $_SESSION['fin']<count($objet)) {
-                                                    $debut=$_SESSION['fin'];
-                                                    //désigne le nbre de question qui suit
-                                                    $fin=$_SESSION['fin']+2;
-                                                }elseif (isset($_POST['precedent']) && $_SESSION['fin']>4) {
-                                                    // 
-                                                    $debut=$_SESSION['fin']-4;
-                                                    $fin=$_SESSION['fin']-2;
-                                                }else
-                                                {
-                                                    $debut=0;
-                                                    $fin=2;
-                                                }
-                                                $_SESSION['j']=$debut+1;
-                                                $j = 0 ;
-                                        for ($i=$debut; $i <$fin ; $i++) {
-
-                                            if ($i< $_SESSION["num"]) {
-                                                
-                                                        echo $objet[$i]['question'].'<br>' ;
-                                                        // if ($i<count($objet)) {
-                                                            if($objet[$i]["choix"]=="texte"){
-                                                                $reponse=$objet[$i]["reponse"];
-                                                                //enlevé la fonction read.. et la valeur du value
-                                                                echo "<input type='texte' value='' style='font-weight: bold;text-align: center;border-radius: 5%;height: 30px;'><br><br>";
-                                                            }
-                                                            elseif($objet[$i]["choix"]=="simple"){
-                                                                for($k=1;$k<=10;$k++){
-                                                                    if(isset($objet[$i]["reponse$k"])){
-
-                                                                        // if($objet[$i]["exacte"]==$k){
-
-                                                                            $recup_radio=$objet[$i]["reponse$k"];
-                                                                            echo "<input type='radio' id='recup_simple'name='saisi_radio' value='selectionner'>".$recup_radio."<br><br>";
-                                                                    }
-                                                                    // if($objet[$i]["exacte"]!=$k){
-
-                                                                    //     $bien=$objet[$i]["reponse$k"];
-                                                                    //     echo "<input type='radio' disabled  value='$bien'>".$bien."<br><br>";
-                                                                    // }
-                                                                }
-                                                            //}
-                                                        }
-                                                        elseif($objet[$i]["choix"]=="multiple"){
-                                                            for($k=1;$k<=10;$k++){
-                                                               
-                                                                if(isset($objet[$i]["reponse$k"])){
-
-                                                                    // if(@$objet[$i]["exacte$k"]==$k){
-                                                                        $reponse=$objet[$i]["reponse$k"];
-                                                                        echo "<input type='checkbox' name='recup' value=''>".$reponse."<br><br>";
-                                                                // }
-                                                                // if(@$objet[$i]["exacte$k"]!=$k){
-
-                                                                //     $bien=$objet[$i]["reponse$k"];
-                                                                //     echo "<input type='checkbox' disabled  value='$bien'>".$bien."<br><br>";
-                                                                // }
-                                                                }
-                                                            }
-                                                        }
-
-
-                                                        $_SESSION['j']++;
-                                                    // }
-                                                    // $_SESSION['j']++;
-                                                }
-                                             }
-                                            $_SESSION['fin']=$fin;
-                                                    if (isset($_POST['suivant']) OR $_SESSION['fin']>=3) {
-                                                        echo "<button  name='precedent' style='float:left;margin-left:-0vw;'> Precedent</button> ";
-                                                    }
-                                                    ?>
-                                                   <?php
-                                                    if ($_SESSION['fin']< $_SESSION['num']) {
-                                                        echo "<button class='bttn' name='suivant' style='float:right;margin-top:1.7vw'> suivant</button> ";
-                                                    }
-                                                   elseif($_SESSION['fin'] == $_SESSION['num']){
-                                                                echo "<button class='bttn' name='fini' style='float:right;margin-top:1.7vw'><a href='terminer.php'>Terminer </a></button> ";
-                                                             
-                                                            }
-                                    
-                                               ?>
-                                          </table>                 
+                                  
 
                                     </span>
                                     <span class="score">
@@ -292,7 +204,3 @@
             
         </body>
         </html>
-
-        <script>
-            
-        </script>

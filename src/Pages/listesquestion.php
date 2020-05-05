@@ -1,4 +1,21 @@
-
+    <?php
+        session_start();    
+    
+        $tab = file_get_contents('../../asset/JSON/question.json');
+        $objet = json_decode($tab, true); 
+            if (isset($_POST['apply']) && !empty($_POST['num']) ){
+                  $_SESSION['num'] = $_POST['num'] ;
+        //   if (&& ($_POST['num'] >= 5)) {
+        //     $_SESSION['fin']= $_POST['num'] ;
+            
+        //   }else{ 
+        //       $fin = $_POST['num'];
+        //   }
+      }
+    //   else{
+    //       $fin = $_POST['num'] = 0;
+    //   }
+     ?> 
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -8,9 +25,7 @@
         <link rel="stylesheet" href="../../asset/CSS/cptcreation1.css">
     </head>
     <body>
-        <!-- <form action="" method = "GET">  -->
-
-            
+    
             </div><div id="container">
                 <div id="header"></div>
         
@@ -44,30 +59,35 @@
                                         </div>
                                     </div>
                                     <div id="liste_question">
-                                    <form method="post">
+                                        <form method="post">
+                                            <label for="">Nombre de question souhaité par jeu</label><br>
+                                            <input type="number" min ="6" name="num" placeholder= "saisissez ici un chiffre"><br>
+                                            <button name="apply">apply</button><br>
+                                        
                                              <table>
-                                                <?php
-                                                session_start();
+                                                <?php                                                
                                                 $tab = file_get_contents('../../asset/JSON/question.json');
-                                                $objet = json_decode($tab, true);
-                                                
+                                                $objet = json_decode($tab, true);                                               
                                                 // $objet=[1,4,5,8,4,2,46,89,12,30,40,50,67];
                                                 
+                                                //  var_dump($tab) ;
                                                 if (isset($_POST['suivant'] ) && $_SESSION['fin']<count($objet)) {
                                                     $debut=$_SESSION['fin'];
+
                                                     $fin=$_SESSION['fin']+5;
-                                                }elseif (isset($_POST['precedent']) && $_SESSION['fin']>10) {
+                                                }elseif (isset($_POST['precedent']) && $_SESSION['fin']>10) { 
                                                     $debut=$_SESSION['fin']-10;
                                                     $fin=$_SESSION['fin']-5;
                                                 }else
                                                 {
                                                     $debut=0;
-                                                    $fin=5;
+                                                    $fin=5;                                             
                                                 }
+                                           
                                                 $_SESSION['j']=$debut+1;
-                                        for ($i=$debut; $i <$fin ; $i++) {
-                                            if ($i<count($objet)) {
-                                                
+                                        for ($i=$debut; $i < $fin ; $i++) {
+                                            if ($i< $fin && $i< count($objet)) {
+                                                        //  $objet = $objet-$value ;
                                                         echo $objet[$i]['question'].'<br>' ;
                                                         if ($i<count($objet)) {
                                                             if($objet[$i]["choix"]=="texte"){
