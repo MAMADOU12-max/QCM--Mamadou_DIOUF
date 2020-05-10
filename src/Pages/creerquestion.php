@@ -1,4 +1,5 @@
         <?php      
+                $champs_vide = "" ;
                 // rajout des données dans json
                 if (!empty($_POST)) {
                   $tab=[] ;
@@ -13,7 +14,7 @@
 
                 file_put_contents('../../asset/JSON/question.json', $data) ;
 
-                }else{ echo "tout les champs sont obligatoires!" ;}
+                }else{ $champs_vide = "tout les champs sont obligatoires";}
 
 
 
@@ -151,14 +152,13 @@
                                             <div>   
                                                 <label style="margin-top: 20px; position: absolute; margin-left:5px;" for="">Questions</label>
                                                 <textarea name="question" id="question" class="area" cols="33" rows="3" style="position: absolute; margin-left: 70px;"></textarea>   
-                                                <!-- <span class="error-text">****</span> -->
+                                               
                                             </div>
 
                                             <div style="margin-top: 67px; margin-left: 8px;"  >
                                                 <label for="">Nbre de Points</label>                                             
                                                 <input style="height: 20px; width: 54px;" id="points" name="points" type="number">
-                                                <!-- <label for=""></label> -->
-                                                <span id="error"></span>
+                                                 <span id="error"><?php echo $champs_vide ;?></span>
                                             </div>
 
                                             <div id="inputs" class="Gn">

@@ -1,12 +1,40 @@
 [
-    
     {
         "nom": "Modou",
-        "prenom": "Modou",
+        "prenom": "Diouf",
         "login": "modoudiouf535@gmail.com",
         "mot de passe": "DOdu",
-        "score": 0,
+        "score": "4344",
         "profil": "joueur",
+        "image": {
+            "name": "",
+            "type": "",
+            "tmp_name": "",
+            "error": 4,
+            "size": 0
+        }
+    },
+    {
+        "nom": "joueur",
+        "prenom": "joueur",
+        "login": "joueur",
+        "mot de passe": "joueur",
+        "score": "0",
+        "profil": "joueur",
+        "image": {
+            "name": "",
+            "type": "",
+            "tmp_name": "",
+            "error": 4,
+            "size": 0
+        }
+    },
+    {
+        "nom": "admin",
+        "prenom": "admin",
+        "login": "admin",
+        "mot de passe": "admin",
+        "profil": "admin",
         "image": {
             "name": "",
             "type": "",
@@ -20,7 +48,6 @@
         "prenom": "Laye",
         "login": "layediop@gmail.com",
         "mot de passe": "Laye",
-        "score": "",
         "profil": "admin"
     },
     {
@@ -28,7 +55,7 @@
         "prenom": "Laye",
         "login": "layep@gmail.com",
         "mot de passe": "Laye",
-        "score": "",
+        "score": "675",
         "profil": "joueur"
     },
     {
@@ -36,7 +63,7 @@
         "prenom": "Habib",
         "login": "laye@gmail.com",
         "mot de passe": "Habib",
-        "score": 0,
+        "score": "12",
         "profil": "joueur",
         "image": {
             "name": "Capture.JP1.JPG",
@@ -44,6 +71,43 @@
             "tmp_name": "C:\\Users\\ProBook\\OneDrive\\Nouveau dossier\\tmp\\php3080.tmp",
             "error": 0,
             "size": 76588
+        }
+    },
+    {
+        "nom": "Mike",
+        "prenom": "Mike",
+        "login": "mike@gmail.com",
+        "mot de passe": "MIke",
+        "profil": "admin"
+    },
+    {
+        "nom": "Teste",
+        "prenom": "Teste",
+        "login": "testemoi@gmail.com",
+        "mot de passe": "TEste",
+        "score": 0,
+        "profil": "joueur",
+        "image": {
+            "name": "",
+            "type": "",
+            "tmp_name": "",
+            "error": 4,
+            "size": 0
+        }
+    },
+    {
+        "nom": "Modou",
+        "prenom": "Lastname",
+        "login": "modoudiouf535@gmail.com",
+        "mot de passe": "DOdu",
+        "score": 0,
+        "profil": "joueur",
+        "image": {
+            "name": "",
+            "type": "",
+            "tmp_name": "",
+            "error": 4,
+            "size": 0
         }
     }
 ]

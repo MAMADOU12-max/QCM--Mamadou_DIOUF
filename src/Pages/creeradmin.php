@@ -1,5 +1,10 @@
 
-
+<?php
+// if (!isset($_POST['verif_element'])) {
+//             header('Location:../../index.php');
+//             # code...
+//  }
+ ?>       
 <!DOCTYPE html>
 <html lang="en">
 <head>

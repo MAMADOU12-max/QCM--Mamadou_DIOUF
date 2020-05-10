@@ -1,4 +1,5 @@
 [
+      
     {
         "question": "qui etait Micheal Jackson?",
         "points": "2",
@@ -35,7 +36,7 @@
         "reponse": "Paul Kagam\u00e9"
     },
     {
-        "question": "quelle est la derni\u00e9re lettre de l'alphabet? ",
+        "question": "quelle est la derni\u00e9re lettre de du mot  alphabet? ",
         "points": "5",
         "choix": "simple",
         "reponse1": "z",
@@ -72,9 +73,9 @@
     },
     {
         "question": "qui etait battling siki ?",
-        "points": "6",
+        "points": "3",
         "choix": "texte",
-        "reponse": "le premier champion  africain  de boxe en France?"
+        "reponse": "le premier champion  africain  de boxe en France"
     },
     {
         "question": "qui est l'homme le plus riche de l'Asie?",
@@ -112,7 +113,7 @@
         "exacte3": "3"
     },
     {
-        "question": "Identifiez les grands inventeurs du monde ?",
+        "question": "Identifiez les grands inventeurs qui ont révolus le monde ?",
         "points": "4",
         "choix": "multiple",
         "reponse1": "Thomas Edison",
@@ -120,5 +121,14 @@
         "reponse2": "Einstein",
         "exacte2": "2",
         "reponse3": "Mike Tyson"
+    },
+    {
+        "question": "quelle est le secret pour reussir dans la vie?",
+        "points": "3",
+        "choix": "simple",
+        "reponse1": "p\u00e9rs\u00e9verance",
+        "exacte": "1",
+        "reponse2": "paraisse",
+        "reponse3": "abandonner"
     }
 ]

@@ -4,6 +4,10 @@ session_start() ;
 // session_destroy() ;
 // header('location:../index.php') ;
 // exit ;
+if (!isset($_POST['verif_element'])) {
+    header('Location:../../index.php');
+    # code...
+}
 
 
 ?> 

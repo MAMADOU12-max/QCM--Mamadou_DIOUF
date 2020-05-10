@@ -4,8 +4,49 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Listes des joueurs</title>
         <link rel="stylesheet" href="../../asset/CSS/cptcreation1.css">
+        <style>
+            .contain-table{
+                background-color:turquoise;
+                border-radius: 15px;
+                width:330px;
+                height:170px;
+                margin-left:200px;
+                text-align:center;
+            }
+            .mon-table{
+                width: 200px;
+                height:100px;
+                background-color: yellow;
+                border-collapse:collapse;
+                margin-left:70px;
+                border-radius: 5px;
+                margin-bottom:12px;
+            }
+             table{
+                border-radius:13;
+                border-collapse:collapse;
+                
+                
+            }
+            td{
+                border:2px solid black;
+              
+            }
+            th{
+                border:2px solid black; 
+            }
+            .page{
+                width: 60px;
+                height: 30px;
+                background-color: turquoise;
+                margin-top: 80px; 
+                margin-left: 330px;
+                text-align:center;
+               border-radius: 5px;
+            }
+        </style>
     </head>
     <body>
         <form action="" method = "post"> 
@@ -48,67 +89,84 @@
                                             $tab = file_get_contents('../../asset/JSON/commun.json');
                                             $objet = json_decode($tab, true);
                                           
-                                               $temp=array();
+                                            $cpt=count($objet);
+                                            $temp=array();
                                             //permet de ranger le score par ordre croissant                          
-                                            for ($i=0; $i < count($objet); $i++)
-                                            { 
+                                            for ($i=0; $i < $cpt; $i++)
+                                            {  
                                                 for ($j=0; $j <$i ; $j++)
                                                 { 
-                                                    if($objet[$i]['score']>$objet[$j]['score'])
-                                                    {
-                                                        $temp=$objet[$i];
-                                                        $objet[$i]=$objet[$j];
-                                                    $objet[$j]=$temp;
+                                                    if (isset($objet[$i]['score'])) {
+                                                                    # code...
+                                                        if(@($objet[$i]['score']>$objet[$j]['score']))
+                                                        {
+                                                            $temp=$objet[$i] ;
+                                                            $objet[$i]=$objet[$j];
+                                                            $objet[$j]=$temp;
+                                                        }
                                                     }
+                                                              
                                                 }
+                                                       
                                             }
-                                      
-                                            if(isset($objet))
-                                            {
-                                                $total=sizeof($objet);
-                                            
-                                                $col=1;
-                                                $lign=15;
-                                                $elePag=($col*$lign);
-                                                
-                                                $nbrPage=ceil($total/$elePag);
-                                            
-                                                if(isset($_GET['page'])) // Si la variable $_GET['page'] existe...
-                                                {
-                                                    $page_num=$_GET['page'];
-                                            
-                                                }
-                                                else
-                                                {
-                                                    $page_num=1;
-                                                }
 
 
-                                            
-                                                    echo'<table style="margin-left:120px; margin-top: -40px; border-collapse: collapse;"><tr>';
-                                                    for($j=($page_num-1)*15;$j<$page_num*15;$j++)
-                                                    {
-                                                        if($j==$total )
+                                                    $_SESSION['meilleur']=$objet; 
+                                                    if(isset($_SESSION['meilleur']) )
+                                                    {                                             
+                                                        $total=sizeof($_SESSION['meilleur']);                                                    
+                                                        $col=1;
+                                                        $lign=15;
+                                                        $elePag=($col*$lign); //element par page
+                                                        // arrondir par excés...le nbre de page 
+                                                        $nbrPage=ceil($total/$elePag);
+                                                    
+                                                        if(isset($_GET['page'])) // Si la variable $_GET['page'] existe...
                                                         {
-                                                        break;
+                                                            $page_num=$_GET['page'];
                                                         }
-                                                        echo'<td  style="border: 2px solid black;">'. $objet[$j]['prenom'].'</td>';
-                                                        echo'<td  style="border: 2px solid black;">'. $objet[$j]['nom'].'</td>';
-                                                        echo'<td  style="border: 2px solid black;">'. $objet[$j]['score']."points".'</td>';
-                                                        echo '<br>';
+                                                        else
                                                         {
-                                                            echo'</tr><tr>';
+                                                            $page_num=1;
                                                         }
-                                                    } 
-                                                    echo'</tr></table>';
+                                                        ?>
+                                                        <div class='contain-table'>
+                                                        <?php
+                                                                // var_dump($_SESSION['meilleur']) ;
+                                                            echo'<table class="mon-table">' ;
+                                                            echo'<tr>';
+                                                            echo'<th>Nom</th>';
+                                                            echo'<th>Prénom</th>';
+                                                            echo'<th>Score</th>';
+                                                            echo'<tr>';
+                                                            echo'<tr>';
+                                                            for($j=($page_num-1)*15;$j<$page_num*15 && isset($_SESSION['meilleur'][$j]['score']);$j++)
+                                                            {
+                                                                ?>
+                                                                  
+                                                                <?php
+                                                                if($j==$total) //stop des peges si on finit de parcouir $objet
+                                                                {
+                                                                break;
+                                                                }
+                                                                echo'<td >'. $_SESSION['meilleur'][$j]['prenom'].'</td>';
+                                                                echo'<td >'. $_SESSION['meilleur'][$j]['nom'].'</td>';
+                                                                echo'<td >'. $_SESSION['meilleur'][$j]['score']."points".'</td>';
+                                                                echo '<br>';
+                                                                {
+                                                                    echo'</tr><tr>';
+                                                                }
+                                                            } 
+                                                            echo'</tr></table>';
+                                                      ?>
+                                                       </div>
+                                                      <?php      
 
-                                                    for ($i=1; $i <=$nbrPage ; $i++) 
-                                                    {
-                                                        echo "<div style=\" position: relative; top: 100px; margin-left: 163px;\"><a href='listesjoueurs.php?lien=3&page=".$i."' >Page $i  </a></div>";
-
-                                                    }
-
-                                            } 
+                                                            for ($i=1; $i <=$nbrPage ; $i++) 
+                                                            {
+                                                                echo "<div class='page'\"><a href='listesjoueurs.php?lien=3&page=".$i."' >Page $i </a></div>";                     
+                                                            }                   
+                                                        }  
                                       
                                             ?>
                                         </div>

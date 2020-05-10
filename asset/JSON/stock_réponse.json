@@ -1,0 +1,19 @@
+{
+    "goodanswer": "t",
+    "0": {
+        "question": "Qui est le pire pr\u00e9sident au monde?",
+        "trouver": "Macky Sall"
+    },
+    "1": {
+        "question": "qui etait Micheal Jackson?",
+        "trouver": "un musicien"
+    },
+    "3": {
+        "question": "Combien d'oc\u00e9an existe dans le monde?",
+        "trouver": "5"
+    },
+    "5": {
+        "question": "quelle est la derni\u00e9re lettre de l'alphabet? ",
+        "trouver": "t"
+    }
+}

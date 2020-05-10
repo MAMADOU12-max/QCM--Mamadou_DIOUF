@@ -1,46 +1,51 @@
 <?php
-    session_start() ;   
-?>
-<?php 
+    session_start() ;  
 
-if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {      
-    $login = $_POST['login'] ;
-    $mdp = $_POST['mdp'] ; 
-   //  $_SESSION['login'] = $_POST['login'] ;
-   //  $_SESSION['mdp'] =$_POST['mdp'] ;
-    
-   //  $mdpError= $loginError =""; 
- 
-   $tab = file_get_contents('asset/JSON/commun.json');
-   $objet = json_decode($tab, true);
-   $moi = $objet ;
-      for ($i=0; $i < count($moi) ; $i++) { 
-               if( $login == $moi[$i]['login'] &&  $mdp == $moi[$i]['mot de passe'] && $moi[$i]['profil'] == "joueur") {              
-                   
-                      header('Location:src/Pages/pagejeu.php');
-                    //   echo "joueur" ;
-               break;
-                    }
-                
-          if( $login == $moi[$i]['login'] &&  $mdp == $moi[$i]['mot de passe'] && $moi[$i]['profil'] == "admin") {  
-                   header('Location:src/Pages/cptcreation.php');
-                        // echo "suis admin" ;
-                  break;
-           }
-                
+    $login_error = $password_error = $general_error = "" ; 
+    if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp'])){      
+        $login = $_POST['login'] ;
+        $mdp = $_POST['mdp'] ; 
+      
+       $login_error = $password_error = "" ; 
+    //    /function qui prend le mdp et le login et fait la  redirection, si necéssaire
+          function recuperation($login,$mdp,$login_error) {  
+            $tab = file_get_contents('asset/JSON/commun.json');
+            $objet = json_decode($tab, true);
            
-       }
-//        if( $login != $moi[$i]['login'] &&  $mdp != $moi[$i]['mot de passe']){ /*echo '<div style="color: red; padding-top: 200px; padding-left: 500px; position: absolute;">
-//            not corresponding password and login</div>';*/
-//            echo "bonjour" ;
-//        // break;
-//        }
-    }
-   elseif(isset($_POST['clik']) && (empty($_POST['login']) || empty($_POST['mdp']))) 
-   { echo '<div style="color: red; padding-top: 260px; padding-left: 550px; position: absolute;">
-       you must fill all box!</div>';    } 
-
-?>
+                $teste = false;
+                for ($i = 0; $i < count($objet); $i++) {
+            
+                    if ( $login == $objet[$i]['login'] &&  $mdp == $objet[$i]['mot de passe']) {
+                        setcookie("arret_element" ,"verif",time()+60*60*30*12) ;
+                        if($objet[$i]['profil'] == "joueur"){
+                            
+                            header('Location:src/Pages/pagejeu.php');
+                        }
+                        elseif($objet[$i]['profil'] == "admin") {
+                            // $_SESSION['user_image'] == $objet[$i]['admin_ image'] ;
+                            header('Location:src/Pages/listesquestion.php');
+                          
+                        }                 
+                    }
+                }
+                if (@($login != $objet[$i]['login'] ||  $mdp != $objet[$i]['mot de passe'])) {
+                    # code...
+                    $general_error = "not corresponding password and login!!" ;
+                   echo $general_error;
+                }
+               
+         
+            }
+           
+            recuperation($login,$mdp,$login_error);
+        }
+       
+        elseif(isset($_POST['clik']) && (empty($_POST['login']) || empty($_POST['mdp']))){ 
+             $general_error == "cool" ;
+             echo "<div id='remplir'>you must fill all box!</div>" ;
+       } 
+     
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,9 +55,10 @@ if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {
     <title>Page connexion </title>
     <link rel="stylesheet" href="asset/CSS/pageconnexion.css">
     <style>
-        span{
+        .error{
             color: red;
             font-size: 0.6 em;
+          
         }
     </style>
 </head>
@@ -66,7 +72,7 @@ if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {
                     <h3>le plaisir de jouer</h3>
                     </div>
                     
-        
+                    
                           <div id="zone">
                                 <div id="login">
                                     <h4>login form</h4>
@@ -76,24 +82,28 @@ if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {
                                     <form id="form" action=""  method="post">
                                         <div class="ensemble">
                                             <div class="input">
-                                            <span id="login_error"></span>
+                                            <span class="error" id="login_error"></span>
                                                 <input type="text" id="input1" value="<?php if(isset($_POST['login'])) {  echo $_POST['login'] ; } ?>" name="login" placeholder="login">
-                                               
-                                            </div>
+                                                </div>                                             
+                                                <div class="error"><?php echo $login_error; echo $general_error;?></div>
+                                            
                                             <div class="img">
                                                 <label class="label" for="login"><img id="carnar" src=url(asset/IMG/images/Icones/ic-login.png) alt=""></label>
                                             </div>
                                         </div>
+
                                         <div class="ensemble">
-                                        <span id="password_error"></span>
                                             <div class="input">
-                                                <input type="text" id="input2" value="<?php if(isset($_POST['mdp'])) {  echo $_POST['mdp'] ; }  ?>" name="mdp" placeholder="password">
-                                               
+                                                <span class="error" id="password_error"></span>
+                                                <input type="text" id="input2" value="<?php if(isset($_POST['mdp'])) {  echo $_POST['mdp'] ; }  ?>" name="mdp" placeholder="password">                                               
+                                                <div><?php echo $password_error ;?></div>
                                             </div>
+                                            
                                             <div class="img">
                                                 <label id="label0" for="mdp"><img  src="Images/Icones/icone-password.png" alt=""></label>
                                             </div>
                                         </div>
+
                                         <button id="bouton" name="clik" type="submit">connexion</button>
                                         <div id="inscrire"><a id="ins" href="src/Pages/joueurprofil.php">s'inscrire pour jouer?</a></div>
                                     </form>
@@ -105,29 +115,24 @@ if(isset($_POST['clik']) && !empty($_POST['login']) && !empty($_POST['mdp']))  {
         <div id="footer"></div>
 </body>
 </html>
+   <script>     
+        // validation au niveau dela page de connexion
+        var numb1 = document.getElementById('input1') ;
+        var numb2 = document.getElementById('input2') ;
+        document.getElementById('bouton').addEventListener('click',function(e){  
+            if ((numb1.value  == "" &&  numb2.value  == "" )) {
+                //    alert('you must fill all box')
+                e.preventDefault();
+                login_error.textContent = "you must fill all box" ;
+            }else if(numb1.value  == "" &&  numb2.value  != "" ){
+                        e.preventDefault();
+                login_error.textContent = "you must give a login" ;
+            }else if(numb1.value  != "" &&  numb2.value == "" ){
+                        e.preventDefault();
+                password_error.textContent = "****lake password****" ;
+            }
         
-
-<!-- </div>  -->
-    <!-- <script src="asset/JS/index.js"></script>                -->
-   <!-- <script> -->
-       <?php
-        // // validation au niveau dela page de connexion
-        // var numb1 = document.getElementById('input1') ;
-        // var numb2 = document.getElementById('input2') ;
-        // document.getElementById('bouton').addEventListener('click',function(e){  
-        // if ((numb1.value  == "" &&  numb2.value  == "" )) {
-        //     //    alert('you must fill all box')
-        //     e.preventDefault;
-        //     login_error.textContent = "you must fill all box" ;
-        // }else if(numb1.value  == "" &&  numb2.value  != "" ){
-        //             e.preventDefault;
-        //     login_error.textContent = "you must give a login" ;
-        // }else if(numb1.value  != "" &&  numb2.value == "" ){
-        //             e.preventDefault;
-        //     password_error.textContent = "****lake password****" ;
-        // }
+        })
         
-        // })
-        
-// </script>  
+   </script>  
   
